@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Love Calculator</title>
+    <title>Love Calculator for Teff</title>
     <style>
         body {
             display: flex;
@@ -77,12 +77,18 @@
         </div>
     </div>
 
-    <audio autoplay>
+    <!-- Audio Element -->
+    <audio id="myAudio">
         <source src="music.mp3" type="audio/mpeg">
         Tu navegador no soporta la reproducción de audio.
     </audio>
 
+    <!-- Script para reproducir el audio al hacer clic -->
     <script>
+        document.body.addEventListener('click', function() {
+            document.getElementById('myAudio').play();
+        });
+
         let screenValue = '0';
 
         function updateScreen() {
@@ -109,16 +115,16 @@
                 let expression = screenValue.replace(/\u2013/g, '-'); // Reemplazar guión largo por guión corto
                 switch (true) {
                     case /\+/.test(expression):
-                        result = 'I love you ❤️';
+                        result = 'Te quiero mucho, Teff 💖';
                         break;
                     case /\-/.test(expression):
-                        result = 'My beautiful girl 🧡';
+                        result = 'Eres lo mejor que me ha pasado, Teff 💕';
                         break;
                     case /\*/.test(expression):
-                        result = 'Marry me 🤍';
+                        result = 'Cada día contigo es un regalo, Teff 💫';
                         break;
                     case /\//.test(expression):
-                        result = 'Thanks for everything 💖';
+                        result = 'Gracias por ser tan especial, Teff 🌟';
                         break;
                     default:
                         result = eval(expression).toString();
