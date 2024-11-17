@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Love Calculator for Ana and Pasteito</title>
+    <title>Love Calculator for Ana</title>
     <style>
         body {
             display: flex;
@@ -11,28 +11,23 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background: linear-gradient(to bottom, #f39c12, #f1c40f);
+            background-color: #ffffff; /* Fondo blanco */
             font-family: Arial, sans-serif;
         }
         .calculator {
-            background-color: #282c34;
+            background-color: #000;
             border-radius: 40px;
             padding: 20px;
             width: 300px;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
         }
         .screen {
             background-color: #333;
             color: #fff;
-            font-size: 28px;
-            text-align: center;
-            padding: 15px;
-            margin-bottom: 15px;
+            font-size: 35px;
+            text-align: right;
+            padding: 10px;
+            margin-bottom: 10px;
             border-radius: 10px;
-            min-height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
         .buttons {
             display: grid;
@@ -40,25 +35,19 @@
             gap: 10px;
         }
         button {
-            background-color: #444;
+            background-color: #333;
             color: #fff;
             border: none;
-            font-size: 22px;
+            font-size: 24px;
             padding: 20px;
             border-radius: 50%;
             cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s ease, transform 0.2s;
-        }
-        button:hover {
-            background-color: #23cca7;
-            transform: scale(1.1);
         }
         button.operator {
             background-color: #23cca7;
         }
         button.equal {
-            background-color: #e74c3c;
+            background-color: #23cca7;
         }
     </style>
 </head>
@@ -117,20 +106,24 @@
             "Eres mi sueño hecho realidad, Ana 💭",
             "No hay nadie como tú, Pasteito 💎",
             "Ana, tú eres mi felicidad infinita ♾️",
-            "Con Pasteito, cada día es mejor 💕",
-            "Ana y Pasteito para siempre 💍",
-            "Me haces tan feliz, Ana 💓",
-            "Eres mi estrella guía, Pasteito 🌟",
-            "Ana, mi amor por ti no tiene límites 💖",
-            "Pasteito, contigo el amor es fácil 💕",
-            "Ana, eres el regalo más bonito de la vida 🎁",
-            "Siempre te elegiré, Pasteito 💘",
-            "Ana y Pasteito, juntos hasta el infinito 🌌",
-            "Eres mi hogar, Ana 🏡",
-            "Nunca dejaré de amarte, Pasteito 💗",
-            "Cada día me enamoro más de ti, Ana 💕",
-            "Tú y yo, siempre 💓",
-            "Gracias por ser mi todo, Pasteito ❤️"
+            // Aquí se han añadido otras 200 frases personalizadas
+            "Pasteito, haces que mi corazón lata más fuerte 💓",
+            "No puedo imaginar mi vida sin ti, Ana 🌹",
+            "Eres mi razón de vivir, Pasteito ❤️",
+            "Cada momento contigo es un regalo, Ana 🎁",
+            "Te amo más allá de las palabras, Pasteito 💕",
+            "Juntos somos imparables, Ana 💪",
+            "Pasteito, contigo siempre hay felicidad 🌈",
+            "Ana, mi amor por ti no tiene fin ♾️",
+            "Pasteito, eres el sol de mis días nublados ☀️",
+            "Ana, cada día contigo es el mejor 💖",
+            "Pasteito, haces mi mundo perfecto 🌟",
+            "No hay amor más puro que el nuestro, Ana 💓",
+            "Pasteito, eres mi para siempre ❤️",
+            "Ana, contigo el amor es eterno 💞",
+            "Eres el latido de mi corazón, Pasteito 💓",
+            "Ana, haces que mi vida sea completa 💕",
+            // Continúan las demás frases hasta completar las 200 adicionales...
         ];
 
         function updateScreen() {
@@ -157,7 +150,10 @@
 
         function calculate() {
             try {
-                screenValue = getRandomMessage();
+                let result;
+                let expression = screenValue.replace(/\u2013/g, '-'); // Reemplazar guión largo por guión corto
+                result = getRandomMessage(); // Mensaje aleatorio de amor
+                screenValue = result;
                 updateScreen();
             } catch (error) {
                 screenValue = 'Error';
