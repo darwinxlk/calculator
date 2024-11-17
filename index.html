@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Love Calculator for Teff</title>
+    <title>Love Calculator for Ana and Pasteito</title>
     <style>
         body {
             display: flex;
@@ -11,23 +11,28 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f0f0f0;
+            background: linear-gradient(to bottom, #f39c12, #f1c40f);
             font-family: Arial, sans-serif;
         }
         .calculator {
-            background-color: #000;
+            background-color: #282c34;
             border-radius: 40px;
             padding: 20px;
             width: 300px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
         }
         .screen {
             background-color: #333;
             color: #fff;
-            font-size: 35px;
-            text-align: right;
-            padding: 10px;
-            margin-bottom: 10px;
+            font-size: 28px;
+            text-align: center;
+            padding: 15px;
+            margin-bottom: 15px;
             border-radius: 10px;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .buttons {
             display: grid;
@@ -35,19 +40,25 @@
             gap: 10px;
         }
         button {
-            background-color: #333;
+            background-color: #444;
             color: #fff;
             border: none;
-            font-size: 24px;
+            font-size: 22px;
             padding: 20px;
             border-radius: 50%;
             cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s;
+        }
+        button:hover {
+            background-color: #23cca7;
+            transform: scale(1.1);
         }
         button.operator {
             background-color: #23cca7;
         }
         button.equal {
-            background-color: #23cca7;
+            background-color: #e74c3c;
         }
     </style>
 </head>
@@ -91,87 +102,35 @@
         let screenValue = '0';
 
         const loveMessages = [
-            "You light up my life, Teff 💖",
-            "Every day with you is magic 💫",
-            "My heart belongs to you 💕",
-            "You're my everything, Teff 🌟",
-            "I can't imagine life without you ❤️",
-            "You're my sunshine on a cloudy day ☀️",
-            "Together forever, my love 🧡",
-            "With you, every moment is precious 💝",
-            "You're the one who makes my heart race 💓",
-            "I adore you, Teff 🥰",
-            "My love for you grows stronger every day 🌹",
-            "You are my world 🌍",
-            "Forever yours, Teff 🤍",
-            "My heart beats for you 💓",
-            "You complete me 💞",
-            "You're the love of my life ❤️",
-            "No one compares to you 💗",
-            "You're perfect in every way 🌸",
-            "I love everything about you 💜",
-            "You're my dream come true 💭",
-            "Thank you for being mine 💖",
-            "Your smile brightens my darkest days 🌞",
-            "You are my safe place 🏡",
-            "Every second with you is a treasure 💎",
-            "You make my world a better place 🌟",
-            "You're the best thing that ever happened to me 💕",
-            "With you, love feels effortless 💖",
-            "You're my partner in everything 💍",
-            "I could hold you forever 💘",
-            "You're the reason I believe in love 💕",
-            "No one makes me happier than you 💖",
-            "You're the most beautiful soul I've ever known 🌷",
-            "I choose you, always 💕",
-            "You're my heart and soul ❤️",
-            "You are my person 💞",
-            "Your love is all I need 💓",
-            "You mean the world to me 🌍",
-            "You're my forever and always 💍",
-            "I’m crazy about you, Teff 💗",
-            "Your love is my greatest blessing 🌈",
-            "You are my happy place 💖",
-            "I love you more than words can say 💌",
-            "You're my everything 💓",
-            "My love for you is infinite ♾️",
-            "Every moment with you is a gift 🎁",
-            "You're my one and only 💖",
-            "You are the reason I smile 😊",
-            "I love you to the moon and back 🌙",
-            "You're my better half 🥰",
-            "Being with you is all I need 💓",
-            "You're my favorite person ❤️",
-            "My heart is full of love for you 💞",
-            "You are my home 🏡",
-            "You're my shining star 🌟",
-            "I love you more than you will ever know 💖",
-            "You make my life complete 💝",
-            "You are my soulmate 💕",
-            "I’m always thinking of you 💭",
-            "You are everything I've ever wanted 💓",
-            "I'm so lucky to have you 💖",
-            "You're the one I want to spend my life with 💍",
-            "You're the love of my life 💗",
-            "You're my reason for being happy 💖",
-            "You're everything to me 🌸",
-            "You are the best part of my day 💝",
-            "You make my heart skip a beat 💓",
-            "I fall in love with you every day 💖",
-            "You're my endless love 💕",
-            "You bring out the best in me 💖",
-            "You're the most amazing person 💖",
-            "You make my dreams come true 🌈",
-            "You're my soulmate, Teff 💍",
-            "You mean everything to me 💞",
-            "Every moment with you is a blessing 🌟",
-            "I'm grateful for you every day 💖",
-            "You're my happily ever after 💖",
-            "I'm head over heels for you 💓",
-            "You are my one true love 💕",
-            "I can't stop thinking about you 💭",
-            "You're my heart and soul 🌹",
-            "You are the love of my life 💗"
+            "Ana, eres la luz de mis días ☀️",
+            "Pasteito, juntos somos invencibles 💪",
+            "Mi corazón es tuyo, Ana ❤️",
+            "Tú haces que todo valga la pena, Pasteito 💖",
+            "Cada segundo contigo es un tesoro 🌟",
+            "Mi mundo brilla más contigo, Ana 🌍",
+            "Eres mi mayor alegría, Pasteito 😊",
+            "Ana, estar contigo es pura magia 💫",
+            "Pasteito, tú eres mi otra mitad 💞",
+            "Ana, eres mi razón para sonreír 🌈",
+            "Gracias por existir, Pasteito 🥰",
+            "Juntos somos el equipo perfecto, Ana y Pasteito 🧡",
+            "Eres mi sueño hecho realidad, Ana 💭",
+            "No hay nadie como tú, Pasteito 💎",
+            "Ana, tú eres mi felicidad infinita ♾️",
+            "Con Pasteito, cada día es mejor 💕",
+            "Ana y Pasteito para siempre 💍",
+            "Me haces tan feliz, Ana 💓",
+            "Eres mi estrella guía, Pasteito 🌟",
+            "Ana, mi amor por ti no tiene límites 💖",
+            "Pasteito, contigo el amor es fácil 💕",
+            "Ana, eres el regalo más bonito de la vida 🎁",
+            "Siempre te elegiré, Pasteito 💘",
+            "Ana y Pasteito, juntos hasta el infinito 🌌",
+            "Eres mi hogar, Ana 🏡",
+            "Nunca dejaré de amarte, Pasteito 💗",
+            "Cada día me enamoro más de ti, Ana 💕",
+            "Tú y yo, siempre 💓",
+            "Gracias por ser mi todo, Pasteito ❤️"
         ];
 
         function updateScreen() {
@@ -198,10 +157,7 @@
 
         function calculate() {
             try {
-                let result;
-                let expression = screenValue.replace(/\u2013/g, '-'); // Reemplazar guión largo por guión corto
-                result = getRandomMessage(); // Mensaje aleatorio de amor
-                screenValue = result;
+                screenValue = getRandomMessage();
                 updateScreen();
             } catch (error) {
                 screenValue = 'Error';
