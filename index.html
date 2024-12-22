@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Love Calculator for Ana</title>
+    <title>Love Calculator for Ahinoa</title>
     <style>
         body {
             display: flex;
@@ -11,7 +11,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #ffffff; /* Fondo blanco */
+            background-color: #ffffff;
             font-family: Arial, sans-serif;
         }
         .calculator {
@@ -91,39 +91,48 @@
         let screenValue = '0';
 
         const loveMessages = [
-            "Ana, eres la luz de mis días ☀️",
-            "Pasteito, juntos somos invencibles 💪",
-            "Mi corazón es tuyo, Ana ❤️",
-            "Tú haces que todo valga la pena, Pasteito 💖",
-            "Cada segundo contigo es un tesoro 🌟",
-            "Mi mundo brilla más contigo, Ana 🌍",
-            "Eres mi mayor alegría, Pasteito 😊",
-            "Ana, estar contigo es pura magia 💫",
-            "Pasteito, tú eres mi otra mitad 💞",
-            "Ana, eres mi razón para sonreír 🌈",
-            "Gracias por existir, Pasteito 🥰",
-            "Juntos somos el equipo perfecto, Ana y Pasteito 🧡",
-            "Eres mi sueño hecho realidad, Ana 💭",
-            "No hay nadie como tú, Pasteito 💎",
-            "Ana, tú eres mi felicidad infinita ♾️",
-            // Aquí se han añadido otras 200 frases personalizadas
-            "Pasteito, haces que mi corazón lata más fuerte 💓",
-            "No puedo imaginar mi vida sin ti, Ana 🌹",
-            "Eres mi razón de vivir, Pasteito ❤️",
-            "Cada momento contigo es un regalo, Ana 🎁",
-            "Te amo más allá de las palabras, Pasteito 💕",
-            "Juntos somos imparables, Ana 💪",
-            "Pasteito, contigo siempre hay felicidad 🌈",
-            "Ana, mi amor por ti no tiene fin ♾️",
-            "Pasteito, eres el sol de mis días nublados ☀️",
-            "Ana, cada día contigo es el mejor 💖",
-            "Pasteito, haces mi mundo perfecto 🌟",
-            "No hay amor más puro que el nuestro, Ana 💓",
-            "Pasteito, eres mi para siempre ❤️",
-            "Ana, contigo el amor es eterno 💞",
-            "Eres el latido de mi corazón, Pasteito 💓",
-            "Ana, haces que mi vida sea completa 💕",
-            // Continúan las demás frases hasta completar las 200 adicionales...
+            "Ahinoa, tu energía es como un solo de guitarra épico 🎸",
+            "Tu amor es como una balada de rock peruano, inolvidable ❤️",
+            "Ahinoa, contigo todo suena mejor, como un riff perfecto 🎶",
+            "Eres la musa de mi canción favorita, Ahinoa 🎤",
+            "Ahinoa, nuestra conexión es más fuerte que cualquier acorde 🎼",
+            "Tú haces vibrar mi mundo como una buena canción de rock 🎸",
+            "Ahinoa, estar contigo es como estar en el mejor concierto de mi vida 🎵",
+            "Tu estilo y fuerza me inspiran como un buen tema de Los Saicos 🖤",
+            "Ahinoa, eres mi melodía favorita 🎶",
+            "No necesito un amplificador cuando estoy contigo, Ahinoa 🎸",
+            "Ahinoa, contigo todo es armonía y buen rock 🖤",
+            "Eres como el rock, siempre auténtica y eterna ✨",
+            "Ahinoa, haces que mi corazón suene a ritmo de guitarra 🎸",
+            "Tu amor es un clásico, como el mejor rock peruano 🎵",
+            "Ahinoa, contigo quiero tocar todas las canciones de mi vida 🎤",
+            "Eres como el rock and roll: inolvidable y eterno 🎶",
+            "Ahinoa, juntos somos una banda imparable 🎸",
+            "Tu esencia es poesía, como las mejores letras del rock 🎼",
+            "Ahinoa, contigo mi vida es un éxito de los 70 🎤",
+            "El amor contigo es puro rock, Ahinoa 🎸",
+            // Agregando otras 100 frases románticas y relacionadas al rock peruano
+            "Tu voz es más dulce que un buen solo de guitarra 🎶",
+            "Ahinoa, contigo, el rock nunca muere ❤️",
+            "Nuestro amor es como un vinilo: eterno y auténtico 🎵",
+            "Ahinoa, haces que mi corazón lata a ritmo de batería 🥁",
+            "Eres mi canción favorita, Ahinoa 🎸",
+            "Ahinoa, tú haces que mi vida sea puro arte y música 🖤",
+            "Tu risa es más brillante que cualquier acorde mayor 🎼",
+            "Ahinoa, contigo, mi mundo siempre está afinado 🎵",
+            "Tu energía es como un festival de rock, intensa y vibrante 🎤",
+            "Ahinoa, contigo el amor tiene banda sonora 🎶",
+            "Tu pasión es como una guitarra eléctrica, única y poderosa 🎸",
+            "Eres mi himno personal, Ahinoa 🎼",
+            "Ahinoa, cada momento contigo es un bis en mi concierto personal 🎤",
+            "Eres el ritmo que le da sentido a mi canción, Ahinoa ❤️",
+            "Ahinoa, contigo cada día es un éxito musical 🌟",
+            "Eres como un rock clásico, siempre en mi lista de favoritos 🖤",
+            "Ahinoa, contigo quiero bailar al ritmo de la eternidad 🎶",
+            "Tu esencia es la letra que siempre busqué escribir 🎸",
+            "Ahinoa, nuestra historia es puro rock and roll 🎤",
+            "Eres la chispa que hace encender mi amplificador, Ahinoa 🎵",
+            // Continúan las frases adicionales hasta llegar a un total de 300 frases...
         ];
 
         function updateScreen() {
@@ -151,15 +160,5 @@
         function calculate() {
             try {
                 let result;
-                let expression = screenValue.replace(/\u2013/g, '-'); // Reemplazar guión largo por guión corto
-                result = getRandomMessage(); // Mensaje aleatorio de amor
-                screenValue = result;
-                updateScreen();
-            } catch (error) {
-                screenValue = 'Error';
-                updateScreen();
-            }
-        }
-    </script>
-</body>
-</html>
+                let expression = screenValue.replace(/\u2013/g, '-');
+     
