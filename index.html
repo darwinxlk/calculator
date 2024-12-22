@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Love Calculator for Ahinoa</title>
+    <title>Love Calculator for Ana</title>
     <style>
         body {
             display: flex;
@@ -11,7 +11,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #ffffff;
+            background-color: #ffffff; /* Fondo blanco */
             font-family: Arial, sans-serif;
         }
         .calculator {
@@ -160,5 +160,15 @@
         function calculate() {
             try {
                 let result;
-                let expression = screenValue.replace(/\u2013/g, '-');
-     
+                let expression = screenValue.replace(/\u2013/g, '-'); // Reemplazar guión largo por guión corto
+                result = getRandomMessage(); // Mensaje aleatorio de amor
+                screenValue = result;
+                updateScreen();
+            } catch (error) {
+                screenValue = 'Error';
+                updateScreen();
+            }
+        }
+    </script>
+</body>
+</html>
